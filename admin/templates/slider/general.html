@@ -1,0 +1,22 @@
+<div class="input-group">
+    <label>Title</label>
+    <input type="text" name="title" ng-change="_sc.onTitleChange()" ng-model="_sc.data.title" required>
+</div>
+
+<div class="input-group" ng-class="{ 'has-error' : ( _sc.sliderFormSubmitted && sliderForm.alias.$error.required ) || _sc.notifications.alias }">
+    <label>Slider Alias</label>
+    <input type="text" name="alias" ng-change="_sc.onAliasChange()" ng-model="_sc.data.alias" required>
+</div>
+
+<div class="input-group">
+    <label>Short Code {{ sliderForm.alias.$error.required }}</label>
+    <input ng-model="_sc.data.short_code" disabled>
+</div>
+
+
+
+
+
+
+
+

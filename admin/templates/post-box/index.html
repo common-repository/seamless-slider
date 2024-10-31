@@ -1,0 +1,11 @@
+<div class="metabox-holder postbox-container meta-box-sortables column-{{ column }}" ng-class="{ 'cancel-margin' : column === 1 }">
+    <div class="postbox" ng-class="{ 'closed' : closed }">
+        <div class="handlediv" title="Click to toggle"><br></div>
+        <h3 class="hndle ui-sortable-handle">
+            <span>{{ title }}</span>
+        </h3>
+        <div class="inside">
+            <div class="activity-block" ng-include="contentUrl"></div>
+        </div>
+    </div>
+</div>

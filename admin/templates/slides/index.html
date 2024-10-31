@@ -1,0 +1,47 @@
+<h1>Slides
+    <button ng-click="_ssc.addSlide()" class="page-title-action">Add New</button>
+    <button ng-click="_ssc.mediaStreamer.open('instagram')" class="page-title-action">Add with Instagram</button>
+</h1>
+
+<h4 class="pull-left">Drag to sort</h4>
+
+<table class="table wp-list-table widefat fixed striped posts">
+
+    <thead>
+    <tr>
+        <th class="manage-column column-author">Image</th>
+        <th class="manage-column column-author">Alternative Text</th>
+    </tr>
+    </thead>
+
+    <tbody id="the-list" ui-sortable ng-model="_ssc.slides">
+
+    <tr ng-if="_ssc.slides.length === 0">
+        <td colspan="3">No Entries Found</td>
+    </tr>
+
+    <tr ng-repeat="slide in _ssc.slides" class="sortable">
+        <td>
+            <div class="image" ng-style="{ 'background-image': 'url(' + slide.image_url + ')' }"></div>
+
+            <div class="row-actions">
+                    <span class="trash">
+                        <a href="#delete_slide/{{_ssc.slider_id}}/{{ slide.slide_id }}" title="Delete Slider">Delete</a>
+                    </span>
+            </div>
+        </td>
+        <td>{{ slide.alt }}</td>
+    </tr>
+
+    </tbody>
+
+    <tfoot>
+    <tr>
+        <th class="manage-column column-author">Image</th>
+        <th class="manage-column column-author">Alternative Text</th>
+    </tr>
+    </tfoot>
+
+</table>
+
+<media-streamer media-streamer="_ssc.mediaStreamer" on-close="_ssc.mediaStreamer.close"></media-streamer>

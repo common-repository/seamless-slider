@@ -1,0 +1,29 @@
+.ss-iw {
+
+  &.scaleout {
+
+    & > .ss-slide {
+      position:absolute;
+      left:0;
+      top:0;
+      opacity:0;
+      @include transform( scale(0) );
+      @include transition-property( transform,opacity );
+      @include transition-timing-function( ease-in-out );
+
+      &.active,
+      &.in {
+        @include transform( scale(1) );
+        opacity:1;
+      }
+
+      &.active.out {
+        @include transform( scale(0) );
+        opacity:0;
+      }
+
+    }
+
+  }
+
+}

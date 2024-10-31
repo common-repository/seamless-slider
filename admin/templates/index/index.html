@@ -1,0 +1,50 @@
+<table class="wp-list-table widefat fixed striped posts">
+
+    <thead>
+    <tr>
+        <th class="manage-column column-author">Title</th>
+        <th class="manage-column column-author">Alias</th>
+        <th class="manage-column column-author">Shortcode</th>
+    </tr>
+    </thead>
+
+    <tbody id="the-list">
+
+    <tr ng-if="_ic.sliders.length === 0">
+        <td colspan="3">No Entries Found</td>
+    </tr>
+
+    <tr ng-repeat="slider in _ic.sliders">
+        <td>
+            <strong>
+                <a class="row-title" href="#edit_slider/{{ slider.slider_id }}" title="Edit “sdfsdf”">{{ slider.title }}</a>
+            </strong>
+
+            <div class="row-actions">
+                    <span>
+                        <a href="#edit_slider/{{ slider.slider_id }}" title="Edit Slider">Edit</a> |
+                    </span>
+                     <span>
+                        <a href="#slides/{{ slider.slider_id }}" title="Manage Slides">Manage Slides</a> |
+                    </span>
+                    <span class="trash">
+                        <a href="#delete_slider/{{ slider.slider_id }}" title="Delete Slider">Delete</a>
+                    </span>
+            </div>
+        </td>
+        <td>{{ slider.alias }}</td>
+        <td>{{ slider.short_code }}</td>
+    </tr>
+
+    </tbody>
+
+    <tfoot>
+    <tr>
+        <th class="manage-column column-author">Title</th>
+        <th class="manage-column column-author">Alias</th>
+        <th class="manage-column column-author">Shortcode</th>
+    </tr>
+    </tfoot>
+
+</table>
+

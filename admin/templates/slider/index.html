@@ -1,0 +1,34 @@
+<div class="row">
+
+    <div class="col-lg-12">
+
+        <div class="alert alert-danger alert-dismissable" ng-if="_sc.notifications.alias">
+            <button type="button" class="close" ng-click="_sc.closeNotification( 'alias' )">×</button>
+            {{ _sc.notifications.alias }}
+        </div>
+
+    </div>
+
+</div>
+
+<post-box use-alias="_sc" content-url="_sc.templates.general" column="2" title="General"></post-box>
+
+<post-box use-alias="_sc" content-url="_sc.templates.size" column="2" title="Slider Size ( px / % )"></post-box>
+
+<br class="clear">
+
+<post-box use-alias="_sc" content-url="_sc.templates.effects" column="2" title="Effects" closed="true"></post-box>
+
+<post-box use-alias="_sc" content-url="_sc.templates.options" column="2" title="Options" closed="true"></post-box>
+
+<br class="clear">
+
+<post-box use-alias="_sc" content-url="_sc.templates.arrows" column="2" title="Navigation Arrows" closed="true"></post-box>
+
+<post-box use-alias="_sc" content-url="_sc.templates.bullets" column="2" title="Navigation Bullets" closed="true"></post-box>
+
+<br class="clear">
+
+
+
+

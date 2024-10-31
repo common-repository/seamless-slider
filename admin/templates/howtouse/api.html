@@ -1,0 +1,18 @@
+<h4>
+    In case you will need to manipulate slider outside of it's context. You can use simple API:
+</h4>
+<ul>
+    <li>
+        <b>_SS.getSlider( slider_alias )</b> - returns current slider instance by <b>alias</b>.
+        In case there are more than one instances of the slider, returns <b>array</b>.
+    </li>
+    <li>
+        <b>_SS.getSlider( slider_alias ).nextSlide()</b> - proceeds to next slide.
+    </li>
+    <li>
+        <b>_SS.getSlider( slider_alias ).previousSlide()</b> - reverts to previous slide.
+    </li>
+    <li>
+        <b>_SS.getSlider( slider_alias ).setSlide( slideNumber )</b> - sets active slide to provided <b>slideNumber</b>.
+    </li>
+</ul>

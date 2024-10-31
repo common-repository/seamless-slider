@@ -1,0 +1,62 @@
+<div class="column-2">
+
+    <div class="input-group full-size">
+        <label>
+            <input type="checkbox" value="0" ng-model="_sc.data.options.bullets.show"> Show
+        </label>
+    </div>
+
+    <div ng-if="_sc.data.options.bullets.show">
+
+        <div class="input-group">
+            <label>Type</label>
+            <select class="attachment-filters full-size" ng-model="_sc.data.options.bullets.icon">
+
+                <option ng-repeat=" ( key,arrowIcon ) in _sc.bulletIcons" value="{{key}}">{{ key + 1 }}</option>
+
+            </select>
+        </div>
+
+        <div class="input-group">
+            <label>Size</label>
+            <input class="full-size" type="text" name="arrow-size" ng-model="_sc.data.options.bullets.style['font-size']"
+                   ng-change="_sc.on.change.bulletsize()">
+        </div>
+
+        <div class="input-group">
+            <label>Color</label>
+            <input class="full-size" colorpicker type="text" name="arrow-color" ng-model="_sc.data.options.bullets.style.color">
+        </div>
+
+        <div class="input-group">
+            <label>Background Width</label>
+            <input class="full-size" type="text" name="arrow-background-width" ng-model="_sc.data.options.bullets.style.width">
+        </div>
+
+        <div class="input-group">
+            <label>Background Height</label>
+            <input class="full-size" type="text" name="arrow-background-height" ng-model="_sc.data.options.bullets.style.height">
+        </div>
+
+        <div class="input-group">
+            <label>Background Color</label>
+            <input class="full-size" colorpicker type="text" name="background-color" ng-model="_sc.data.options.bullets.style['background-color']">
+        </div>
+
+    </div>
+
+</div>
+
+<div style="right: 0;" class="column-2 v-middle-container absolute-height">
+
+    <div ng-style="_sc.data.options.bullets.style" class="navigation_arrow horizontal-center">
+
+        <i class="arrow-icon" ng-bind-html="_sc.bulletIcons[ _sc.data.options.bullets.icon ]"></i>
+
+    </div>
+
+</div>
+
+
+
+

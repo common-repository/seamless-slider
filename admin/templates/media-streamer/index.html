@@ -1,0 +1,116 @@
+<div ng-class="{ 'show' : _msc.config.show }" class="ss-media-streamer">
+
+    <div class="media-modal wp-core-ui">
+
+        <button ng-click="_msc.close()" type="button" class="button-link media-modal-close">
+            <span class="media-modal-icon"></span>
+        </button>
+
+        <div class="media-modal-content">
+
+            <div class="media-frame mode-select wp-core-ui hide-menu" id="__wp-uploader-id-0">
+
+                <div class="media-frame-title">
+                    <h1>Select Media Source</h1>
+                </div>
+
+                <div class="media-frame-router">
+
+                    <div class="media-router">
+                        <a href="#" class="media-menu-item active">Instagram</a>
+                    </div>
+
+                </div>
+
+                <div class="media-frame-content" data-columns="10">
+
+                    <div class="attachments-browser">
+
+                        <div class="media-toolbar">
+                            <div class="media-toolbar-secondary">
+
+                                <label class="setting" data-setting="alt">
+                                    <span class="name" style="margin-right:10px;">Hashtag</span>
+                                    <input class="search" type="search" ng-model="_msc.instagram.hashtag">
+                                </label>
+
+                                <button ng-click="_msc.instagram.search()" style="margin-top:10px;" type="button" class="button media-button button-primary button-large media-button-select">Search Images</button>
+
+                                <button ng-show="_msc.instagram.tag_ids.length" ng-click="_msc.instagram.loadMore()" style="margin-top:10px;" type="button" class="button media-button button-primary button-large media-button-select">Load More</button>
+
+                            </div>
+                            <div class="media-toolbar-primary"></div>
+                        </div>
+
+                        <div class="media-sidebar">
+
+                            <div ng-show="_msc.instagram.activeKey !== false" tabindex="0" data-id="27" class="attachment-details save-ready">
+
+                                <h3> Attachment Details </h3>
+
+                                <div class="attachment-info">
+
+                                    <div class="thumbnail thumbnail-image">
+
+                                        <img ng-src="{{ _msc.instagram.images[ _msc.instagram.activeKey ].url }}">
+
+                                    </div>
+
+                                    <label class="setting" data-setting="alt">
+                                        <span class="name">Alt Text</span>
+                                        <input type="text" value="" ng-model="_msc.instagram.images[ _msc.instagram.activeKey ].alt">
+                                    </label>
+
+                                </div>
+
+
+
+                            </div>
+
+                        </div>
+
+                        <ul tabindex="-1" class="attachments ui-sortable ui-sortable-disabled" ng-class="{ 'loading' : _msc.state.loading }">
+
+                            <li ng-class="{ 'selected' : _msc.instagram.selectedImages[key], 'details' : _msc.instagram.activeKey === key }" ng-click="_msc.instagram.selectImage( $event, key, image )" ng-repeat=" ( key, image ) in _msc.instagram.images" tabindex="0" role="checkbox" aria-label="painted_heart-wallpaper-1920x1080" aria-checked="false" data-id="39" class="attachment save-ready">
+                                <div class="attachment-preview js--select-attachment type-image subtype-jpeg landscape">
+                                    <div class="thumbnail">
+
+                                        <div class="centered">
+                                            <img ng-src="{{ image.url }}" draggable="false" alt="">
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                                <button type="button" class="button-link check" tabindex="-1"><span class="media-modal-icon"></span><span class="screen-reader-text">Deselect</span></button>
+
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="media-frame-toolbar">
+
+                    <div class="media-toolbar">
+
+                        <div class="media-toolbar-secondary"></div>
+
+                        <div class="media-toolbar-primary search-form">
+
+                            <button ng-click="_msc.close( _msc.instagram.selectedImages )" type="button" class="button media-button button-primary button-large media-button-select">Add to Seamless Slider</button>
+
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</div>

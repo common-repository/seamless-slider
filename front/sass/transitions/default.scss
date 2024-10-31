@@ -1,0 +1,35 @@
+.ss-iw {
+
+  &.default {
+
+    & > .ss-slide {
+      position:absolute;
+      left:0;
+      top:0;
+      z-index:0;
+      opacity:0;
+
+      &.active,
+      &.in {
+        z-index:1;
+        opacity:1;
+      }
+
+      &.in,
+      &.out {
+
+        @include transition-property( opacity );
+        @include transition-timing-function( ease-in-out )
+
+      }
+
+      &.active {
+        &.out {
+          z-index:0;
+          opacity:0;
+        }
+      }
+
+    }
+  }
+}
